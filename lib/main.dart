@@ -1,44 +1,40 @@
 import 'package:flutter/material.dart';
-<<<<<<< HEAD
-=======
 import 'Modules/splash_screen.dart';
 import 'Modules/onboarding_screen.dart';
 import 'Modules/login_screen.dart';
->>>>>>> 2981d9f3725fccd31e4c10dd79ec5a8384e3edc6
+import 'screens/login/login_screen.dart';
+import 'shared/constants/constants.dart';
 
 void main() {
   runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
-<<<<<<< HEAD
   const MyApp({super.key});
 
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'App de Login',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // TRY THIS: Try running your application with "flutter run". You'll see
-        // the application has a purple toolbar. Then, without quitting the app,
-        // try changing the seedColor in the colorScheme below to Colors.green
-        // and then invoke "hot reload" (save your changes or press the "hot
-        // reload" button in a Flutter-supported IDE, or press "r" if you used
-        // the command line to start the app).
-        //
-        // Notice that the counter didn't reset back to zero; the application
-        // state is not lost during the reload. To reset the state, use hot
-        // restart instead.
-        //
-        // This works for code too, not just values: Most code changes can be
-        // tested with just a hot reload.
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        scaffoldBackgroundColor: AppColors.background,
+        primaryColor: AppColors.primary,
+        colorScheme: ColorScheme.fromSwatch().copyWith(
+          primary: AppColors.primary,
+          secondary: AppColors.primary,
+        ),
+        textTheme: const TextTheme(
+          bodyMedium: TextStyle(color: AppColors.darkText),
+        ),
+        inputDecorationTheme: const InputDecorationTheme(
+          hintStyle: TextStyle(color: Colors.grey),
+        ),
       ),
+      home: const LoginScreen(),
+    );
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
-=======
   const MyApp({Key? key}) : super(key: key);
 
   @override
@@ -64,12 +60,10 @@ class MyApp extends StatelessWidget {
             ),
         '/home': (context) => const HomeScreen(),
       },
->>>>>>> 2981d9f3725fccd31e4c10dd79ec5a8384e3edc6
     );
   }
 }
 
-<<<<<<< HEAD
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
 
@@ -152,7 +146,6 @@ class _MyHomePageState extends State<MyHomePage> {
         tooltip: 'Increment',
         child: const Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.
-=======
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
@@ -168,7 +161,6 @@ class HomeScreen extends StatelessWidget {
           style: TextStyle(fontSize: 24),
         ),
       ),
->>>>>>> 2981d9f3725fccd31e4c10dd79ec5a8384e3edc6
     );
   }
 }
