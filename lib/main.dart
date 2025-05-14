@@ -1,10 +1,17 @@
 import 'package:flutter/material.dart';
+<<<<<<< HEAD
+=======
+import 'Modules/splash_screen.dart';
+import 'Modules/onboarding_screen.dart';
+import 'Modules/login_screen.dart';
+>>>>>>> 2981d9f3725fccd31e4c10dd79ec5a8384e3edc6
 
 void main() {
   runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+<<<<<<< HEAD
   const MyApp({super.key});
 
   // This widget is the root of your application.
@@ -31,10 +38,38 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
+=======
+  const MyApp({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Flutter Splash Demo',
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+        primaryColor: Colors.blue,
+      ),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => const SplashScreen(
+              nextRoute: '/onboarding',
+              lottiePath: 'assets/animations/splash_animation.json',
+            ),
+        '/onboarding': (context) => const OnboardingScreen(
+              loginRoute: '/login',
+            ),
+        '/login': (context) => const LoginScreen(
+              homeRoute: '/home',
+            ),
+        '/home': (context) => const HomeScreen(),
+      },
+>>>>>>> 2981d9f3725fccd31e4c10dd79ec5a8384e3edc6
     );
   }
 }
 
+<<<<<<< HEAD
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
 
@@ -117,6 +152,23 @@ class _MyHomePageState extends State<MyHomePage> {
         tooltip: 'Increment',
         child: const Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.
+=======
+class HomeScreen extends StatelessWidget {
+  const HomeScreen({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Home Screen'),
+      ),
+      body: const Center(
+        child: Text(
+          'Bem-vindo ao aplicativo!',
+          style: TextStyle(fontSize: 24),
+        ),
+      ),
+>>>>>>> 2981d9f3725fccd31e4c10dd79ec5a8384e3edc6
     );
   }
 }
