@@ -69,7 +69,7 @@ flutter run
 
 5. Temas (Light & Dark):
   - Alternância de tema em tempo real com botão na AppBar.
-  - Implementação via light_theme.dart, dark_theme.dart e ThemeController.
+  - Implementação via light_theme.dart, dark_theme.dart e ThemeProvider.
 
 ## 🧩 Widgets Customizados
 
@@ -85,7 +85,7 @@ flutter run
 - Permite configuração de animação, tamanho, alinhamento e repetição
 - Usado na Splash Flutter e outras partes visuais do app
 
-```
+```dart
 LottieWidget(
   assetPath: 'assets/animations/loading.json',
   repeat: true,
@@ -93,10 +93,40 @@ LottieWidget(
 )
 ```
 
+🧭 `CustomAppBar`
+
+- AppBar customizada para uso em todas as telas  
+- Integra controle de tema claro/escuro com `CupertinoSwitch`  
+- Reage dinamicamente ao estado de tema via `Provider`  
+- Estilização completa com `TextStyle` e `ThemeProvider`  
+- Responsiva e sem repetição de código  
+
+```dart
+Scaffold(
+  appBar: CustomAppBar(),
+  body: ...
+)
+```
+
+📝 `CustomCard`
+
+- Componente visual para exibir título, estrelas e descrição  
+- As estrelas são controladas via parâmetro (`0` a `5`)  
+- Usa `Icons.star` e `Icons.star_border` para representar o ranking  
+- Layout organizado com título à esquerda, estrelas à direita e descrição abaixo  
+
+```dart
+CustomCard(
+  titulo: 'Curso Flutter',
+  descricao: 'Aprenda Flutter com boas práticas.',
+  estrelas: 4,
+)
+```
+
 ## 💡 Temas
 
 - O app aplica o tema claro ou escuro dinamicamente.
-- Controlado por ThemeController usando ValueNotifier.
+- Controlado por ThemePrvider usando ChangeNotifierProvider.
 - Alteração de tema em tempo real via botão com ícone na AppBar.
 
 ## 📸 Exemplos Visuais (screenshots)
