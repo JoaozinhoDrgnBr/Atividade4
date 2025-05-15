@@ -4,6 +4,13 @@
 
 Este projeto é uma atividade prática final que simula o fluxo de entrada de um aplicativo real. O app foi desenvolvido com foco em boas práticas de usabilidade, animações modernas e código reutilizável com widgets customizados.
 
+## ▶️ Executar via Gitpod
+
+Clique no botão abaixo para abrir o projeto diretamente no navegador com Gitpod:
+
+[![Abrir no Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/ErikMazzuco/atividade2)
+
+
 ## 🎯 Funcionalidades
 
 - Splash screen nativa com o pacote flutter_native_splash
