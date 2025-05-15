@@ -101,8 +101,40 @@ LottieWidget(
 
 ## 📸 Exemplos Visuais (screenshots)
 
-**ADICIONAR ADICIONAR**
-**ADICIONAR ADICIONAR**
+### 🚀 Splash Screen
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/6b4f2819-f36e-4927-b839-7114f7bdee7e" alt="Splash Screen" width="300"/>
+</p>
+
+---
+
+### 📋 Onboarding
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/4201fd7e-b6e6-4db1-b9d1-ed9ec4792a72" alt="Onboarding" width="300"/>
+</p>
+
+---
+
+### 🔐 Login Screen
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/2aa194f9-acdd-4371-aa77-a3e01e64d713" alt="Login Screen" width="300"/>
+</p>
+
+---
+
+### 🌞 Light Mode
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/7fe8e643-e8c0-4b18-8ee7-52e050fc8626" alt="Light Mode" width="300"/>
+</p>
+
+---
+
+### 🌙 Dark Mode
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/20813ee0-4696-4b42-8cae-5e779dd37654" alt="Dark Mode" width="300"/>
+</p>
+
+---
 
 ## 🛠️ Configuração do flutter_native_splash
 
