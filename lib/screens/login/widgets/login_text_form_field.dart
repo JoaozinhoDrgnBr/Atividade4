@@ -67,6 +67,7 @@ class _LoginTextFormFieldState extends State<LoginTextFormField> {
         duration: const Duration(milliseconds: 200),
         padding: const EdgeInsets.symmetric(horizontal: 12),
         decoration: BoxDecoration(
+          color: AppColors.cardLight,
           border: Border.all(color: borderColor, width: 1.8),
           borderRadius: BorderRadius.circular(12),
         ),
@@ -80,16 +81,15 @@ class _LoginTextFormFieldState extends State<LoginTextFormField> {
           autocorrect: false,
           enableSuggestions: false,
           onChanged: widget.onChanged,
+
           decoration: InputDecoration(
-            icon: Icon(widget.icon, color: AppColors.primary),
+            icon: Container(child: Icon(widget.icon, color: AppColors.primary)),
             hintText: widget.hintText,
             labelText: widget.labelText,
             border: InputBorder.none,
+            fillColor: AppColors.cardLight,
             contentPadding: const EdgeInsets.symmetric(vertical: 16),
-            errorStyle: const TextStyle(
-              color: Colors.red,
-              fontSize: 14,
-            ),
+            errorStyle: const TextStyle(color: AppColors.error, fontSize: 14),
           ),
           validator: (value) {
             // Prioriza o validador customizado se existir

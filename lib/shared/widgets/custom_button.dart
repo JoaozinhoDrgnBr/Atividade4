@@ -1,3 +1,4 @@
+import 'package:atividade4/shared/constants/constants.dart';
 import 'package:flutter/material.dart';
 
 class CustomButton extends StatelessWidget {
@@ -13,7 +14,7 @@ class CustomButton extends StatelessWidget {
     required this.text,
     required this.onPressed,
     this.filled = true,
-    this.color = Colors.orange,
+    this.color = AppColors.primary,
     this.borderRadius = 12.0,
     this.padding = const EdgeInsets.symmetric(vertical: 16, horizontal: 32),
   }) : super(key: key);

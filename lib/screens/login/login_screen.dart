@@ -1,3 +1,4 @@
+import 'package:atividade4/shared/widgets/custom_button.dart';
 import 'package:flutter/material.dart';
 import 'controllers/login_controller.dart';
 import 'widgets/login_text_form_field.dart';
@@ -49,53 +50,53 @@ class _LoginScreenState extends State<LoginScreen> {
               textAlign: TextAlign.center,
             ),
           ),
-          Expanded(
-            child: Center(
-              child: SingleChildScrollView(
-                padding: const EdgeInsets.symmetric(horizontal: 32),
-                child: Form(
-                  key: controller.formKey,
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      LoginTextFormField(
-                        controller: controller.emailController,
-                        hintText: 'E-mail',
-                        icon: Icons.email,
-                        validator: Validators.email,
-                      ),
-                      const SizedBox(height: 16),
-                      LoginTextFormField(
-                        controller: controller.passwordController,
-                        hintText: 'Senha',
-                        icon: Icons.lock,
-                        obscureText: true,
-                        validator: Validators.password,
-                      ),
-                      const SizedBox(height: 24),
-                      ElevatedButton(
-                        onPressed: () => controller.login(context),
-                        child: const Text('Entrar'),
-                      ),
-                      const SizedBox(height: 12),
-                      TextButton(
-                        onPressed: () {
-                          // TODO: ação de registro
-                        },
-                        child: const Text('Registrar-se'),
-                      ),
-                      TextButton(
-                        onPressed: () {
-                          // TODO: ação de recuperação de senha
-                        },
-                        child: const Text('Esqueci minha senha'),
-                      ),
-                    ],
-                  ),
+          Expanded(child: SizedBox(height: double.infinity)),
+          Center(
+            child: SingleChildScrollView(
+              padding: const EdgeInsets.symmetric(horizontal: 32),
+              child: Form(
+                key: controller.formKey,
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    LoginTextFormField(
+                      controller: controller.emailController,
+                      hintText: 'E-mail',
+                      icon: Icons.email,
+                      validator: Validators.email,
+                    ),
+                    const SizedBox(height: 16),
+                    LoginTextFormField(
+                      controller: controller.passwordController,
+                      hintText: 'Senha',
+                      icon: Icons.lock,
+                      obscureText: true,
+                      validator: Validators.password,
+                    ),
+                    const SizedBox(height: 24),
+                    CustomButton(
+                      onPressed: () => controller.login(context),
+                      text: 'Entrar',
+                    ),
+                    const SizedBox(height: 12),
+                    TextButton(
+                      onPressed: () {
+                        // TODO: ação de registro
+                      },
+                      child: const Text('Registrar-se'),
+                    ),
+                    TextButton(
+                      onPressed: () {
+                        // TODO: ação de recuperação de senha
+                      },
+                      child: const Text('Esqueci minha senha'),
+                    ),
+                  ],
                 ),
               ),
             ),
           ),
+          Expanded(child: SizedBox(height: double.infinity)),
         ],
       ),
     );
