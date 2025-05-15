@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'Modules/splash_screen.dart';
+import 'Modules/onboarding_screen.dart';
+import 'Modules/login_screen.dart';
+import 'screens/login/login_screen.dart';
+import 'shared/constants/constants.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,26 +16,50 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'App de Login',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // TRY THIS: Try running your application with "flutter run". You'll see
-        // the application has a purple toolbar. Then, without quitting the app,
-        // try changing the seedColor in the colorScheme below to Colors.green
-        // and then invoke "hot reload" (save your changes or press the "hot
-        // reload" button in a Flutter-supported IDE, or press "r" if you used
-        // the command line to start the app).
-        //
-        // Notice that the counter didn't reset back to zero; the application
-        // state is not lost during the reload. To reset the state, use hot
-        // restart instead.
-        //
-        // This works for code too, not just values: Most code changes can be
-        // tested with just a hot reload.
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        scaffoldBackgroundColor: AppColors.background,
+        primaryColor: AppColors.primary,
+        colorScheme: ColorScheme.fromSwatch().copyWith(
+          primary: AppColors.primary,
+          secondary: AppColors.primary,
+        ),
+        textTheme: const TextTheme(
+          bodyMedium: TextStyle(color: AppColors.darkText),
+        ),
+        inputDecorationTheme: const InputDecorationTheme(
+          hintStyle: TextStyle(color: Colors.grey),
+        ),
       ),
+      home: const LoginScreen(),
+    );
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
+  const MyApp({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Flutter Splash Demo',
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+        primaryColor: Colors.blue,
+      ),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => const SplashScreen(
+              nextRoute: '/onboarding',
+              lottiePath: 'assets/animations/splash_animation.json',
+            ),
+        '/onboarding': (context) => const OnboardingScreen(
+              loginRoute: '/login',
+            ),
+        '/login': (context) => const LoginScreen(
+              homeRoute: '/home',
+            ),
+        '/home': (context) => const HomeScreen(),
+      },
     );
   }
 }
@@ -117,6 +146,21 @@ class _MyHomePageState extends State<MyHomePage> {
         tooltip: 'Increment',
         child: const Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.
+class HomeScreen extends StatelessWidget {
+  const HomeScreen({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Home Screen'),
+      ),
+      body: const Center(
+        child: Text(
+          'Bem-vindo ao aplicativo!',
+          style: TextStyle(fontSize: 24),
+        ),
+      ),
     );
   }
 }
