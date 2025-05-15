@@ -23,17 +23,14 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        elevation: 0, // Remove a sombra da AppBar para que ela não sobreponha a faixa
-        backgroundColor: Colors.transparent, // Torna a AppBar transparente
-      ),
       body: Column(
         children: [
           // Faixa acima do título
           Container(
             height: 100, // Altura da faixa
             color: AppColors.primary, // Cor marrom para a faixa
-            child: Center( // Centraliza o título dentro da faixa
+            child: Center(
+              // Centraliza o título dentro da faixa
               child: const Text(
                 'Login',
                 style: TextStyle(
@@ -42,6 +39,14 @@ class _LoginScreenState extends State<LoginScreen> {
                   color: Colors.white, // Cor branca para o texto
                 ),
               ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(top: 32, bottom: 8),
+            child: Text(
+              'Dica: login teste@exemplo.com | senha 123456',
+              style: TextStyle(color: Colors.grey[700], fontSize: 14),
+              textAlign: TextAlign.center,
             ),
           ),
           Expanded(

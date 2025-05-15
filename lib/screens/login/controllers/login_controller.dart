@@ -23,6 +23,8 @@ class LoginController {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(content: Text('Login realizado com sucesso!')),
       );
+      await Future.delayed(const Duration(seconds: 2));
+      Navigator.of(context).pushReplacementNamed('/home');
 
       // TODO: Navegação para próxima tela
     } else {
