@@ -8,7 +8,7 @@ Este projeto é uma atividade prática final que simula o fluxo de entrada de um
 
 Clique no botão abaixo para abrir o projeto diretamente no navegador com Gitpod:
 
-[![Abrir no Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/ErikMazzuco/atividade2)
+[![Abrir no Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/JoaozinhoDrgnBr/Atividade4)
 
 
 ## 🎯 Funcionalidades
